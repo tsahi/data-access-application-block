@@ -230,7 +230,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Readme.txt" />
+    <None Include="Readme.md" />
     <Content Include="DatabaseSetupScripts\1.DataAccessQuickStarts.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\alldata.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\Country.sql" />
