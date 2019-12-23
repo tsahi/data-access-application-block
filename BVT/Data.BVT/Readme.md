@@ -15,12 +15,12 @@ B. Connect to (localdb)\v11.0 and run SQL scripts located in DatabaseSetupScript
     4. 4.TestDatabase.sql
 
 C. Install Oracle and then run the SQL scripts located in DatabaseSetupScripts\OracleDBScripts:
-    1. Table\alldb.sql
-    2. Packages\ENTLIBTEST.pks
-    2. Packages\ENTLIBTEST.pkb
-    3. SP\1.cursor.sql
+    1. 1.Table\alldb.sql
+    2. 2.Packages\ENTLIBTEST.pks
+    3. 2.Packages\ENTLIBTEST.pkb
+    4. 3.SP\1.cursor.sql<br/>
        All other 18 scripts located in 3.SP directory
-    4. Data\alldata.sql
+    5. 4.Data\alldata.sql
 
 The Oracle connection string is configured as follows:
 
