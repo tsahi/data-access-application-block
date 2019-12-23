@@ -9,10 +9,10 @@ To run the tests the following steps will need to be performed:
 A. Build the Data Access Application Block source code before building the BVT solution.
 
 B. Connect to (localdb)\v11.0 and run SQL scripts located in DatabaseSetupScripts:
-    1. DataAccessQuickStarts.sql
-    2. instnwnd.sql
-    3. TestSchemaAdditionsForNorthWind.sql
-    4. TestDatabase.sql
+    1. 1.DataAccessQuickStarts.sql
+    2. 2.instnwnd.sql
+    3. 3.TestSchemaAdditionsForNorthWind.sql
+    4. 4.TestDatabase.sql
 
 C. Install Oracle and then run the SQL scripts located in DatabaseSetupScripts\OracleDBScripts:
     1. Table\alldb.sql
