@@ -3,7 +3,7 @@ name: Bug report
 about: Create a report to help us improve
 title: ''
 labels: bug
-assignees: tsahi
+assignees: ''
 
 ---
 
@@ -24,6 +24,7 @@ If applicable, add exception stack traces to help explain your problem.
 **Context (please complete the following information):**
  - OS: [e.g. Windows, Linux]
  - DAAB Version [e.g. 7.0]
+ - DB [e.g. Oracle, SQL Server]
 
 **Additional context**
 Add any other context about the problem here.
