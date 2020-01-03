@@ -14,22 +14,25 @@ B. Connect to (localdb)\v11.0 and run SQL scripts located in DatabaseSetupScript
     3. 3.TestSchemaAdditionsForNorthWind.sql
     4. 4.TestDatabase.sql
 
-C. Install Oracle and then run the SQL scripts located in DatabaseSetupScripts\OracleDBScripts:
+C. The Oracle connection string is configured as follows:
+
+   SID: XE<br/>
+   PORT:1521<br/>
+   User Id: SYSTEM<br/>
+   Password: oracle
+
+   These values will need to be modified if the Oracle installation differs. Run this command on your Oracle database instance:
+
+    `ALTER USER SYSTEM IDENTIFIED BY oracle;`
+
+
+D. Install Oracle and then run the SQL scripts located in DatabaseSetupScripts\OracleDBScripts, using the credentials above:
     1. 1.Table\alldb.sql
     2. 2.Packages\ENTLIBTEST.pks
     3. 2.Packages\ENTLIBTEST.pkb
     4. 3.SP\1.cursor.sql<br/>
        All other 18 scripts located in 3.SP directory
     5. 4.Data\alldata.sql
-
-The Oracle connection string is configured as follows:
-
-SID: XE<br/>
-PORT:1521<br/>
-User Id: SYSTEM<br/>
-Password: oracle
-
-These values will need to be modified if the Oracle installation differs.
 
 
 Microsoft patterns & practices<br/>
