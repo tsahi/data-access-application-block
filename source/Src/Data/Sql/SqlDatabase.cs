@@ -547,7 +547,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Sql
         /// <para>The name of the stored procedure to execute.</para>
         /// </param>
         /// <param name="parameterValues">
-        /// <para>An array of paramters to pass to the stored procedure. The parameter values must be in call order as they appear in the stored procedure.</para>
+        /// <para>An array of parameters to pass to the stored procedure. The parameter values must be in call order as they appear in the stored procedure.</para>
         /// </param>
         /// <param name="callback">The async callback to execute when the result of the operation is available. Pass <langword>null</langword>
         /// if you don't want to use a callback.</param>
@@ -589,7 +589,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Sql
         /// if you don't want to use a callback.</param>
         /// <param name="state">Additional state object to pass to the callback.</param>
         /// <param name="parameterValues">
-        /// <para>An array of paramters to pass to the stored procedure. The parameter values must be in call order as they appear in the stored procedure.</para>
+        /// <para>An array of parameters to pass to the stored procedure. The parameter values must be in call order as they appear in the stored procedure.</para>
         /// </param>
         /// <returns>
         /// <para>An <see cref="IAsyncResult"/> that can be used to poll or wait for results, or both; 

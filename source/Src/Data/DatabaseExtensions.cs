@@ -33,7 +33,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
         /// <typeparam name="TResult">The element type that will be returned when executing.</typeparam>
         /// <param name="database">The <see cref="Database"/> that contains the stored procedure.</param>
         /// <param name="procedureName">The name of the stored procedure that will be executed.</param>
-        /// <param name="parameterValues">Parameter values passsed to the stored procedure.</param>
+        /// <param name="parameterValues">Parameter values passed to the stored procedure.</param>
         /// <returns>An enumerable of <typeparamref name="TResult"/>.</returns>
         public static IEnumerable<TResult> ExecuteSprocAccessor<TResult>(this Database database, string procedureName, params object[] parameterValues)
             where TResult : new()
@@ -49,7 +49,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
         /// <param name="database">The <see cref="Database"/> that contains the stored procedure.</param>
         /// <param name="procedureName">The name of the stored procedure that will be executed.</param>
         /// <param name="parameterMapper">The <see cref="IParameterMapper"/> that will be used to interpret the parameters passed to the Execute method.</param>
-        /// <param name="parameterValues">Parameter values passsed to the stored procedure.</param>
+        /// <param name="parameterValues">Parameter values passed to the stored procedure.</param>
         /// <returns>An enumerable of <typeparamref name="TResult"/>.</returns>
         public static IEnumerable<TResult> ExecuteSprocAccessor<TResult>(this Database database, string procedureName, IParameterMapper parameterMapper, params object[] parameterValues)
             where TResult : new()
@@ -64,7 +64,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
         /// <param name="database">The <see cref="Database"/> that contains the stored procedure.</param>
         /// <param name="procedureName">The name of the stored procedure that will be executed.</param>
         /// <param name="rowMapper">The <see cref="IRowMapper&lt;TResult&gt;"/> that will be used to convert the returned data to clr type <typeparamref name="TResult"/>.</param>
-        /// <param name="parameterValues">Parameter values passsed to the stored procedure.</param>
+        /// <param name="parameterValues">Parameter values passed to the stored procedure.</param>
         /// <returns>An enumerable of <typeparamref name="TResult"/>.</returns>
         public static IEnumerable<TResult> ExecuteSprocAccessor<TResult>(this Database database, string procedureName, IRowMapper<TResult> rowMapper, params object[] parameterValues)
             where TResult : new()
@@ -80,7 +80,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
         /// <param name="procedureName">The name of the stored procedure that will be executed.</param>
         /// <param name="parameterMapper">The <see cref="IParameterMapper"/> that will be used to interpret the parameters passed to the Execute method.</param>
         /// <param name="rowMapper">The <see cref="IRowMapper&lt;TResult&gt;"/> that will be used to convert the returned data to clr type <typeparamref name="TResult"/>.</param>
-        /// <param name="parameterValues">Parameter values passsed to the stored procedure.</param>
+        /// <param name="parameterValues">Parameter values passed to the stored procedure.</param>
         /// <returns>An enumerable of <typeparamref name="TResult"/>.</returns>
         public static IEnumerable<TResult> ExecuteSprocAccessor<TResult>(this Database database, string procedureName, IParameterMapper parameterMapper, IRowMapper<TResult> rowMapper, params object[] parameterValues)
             where TResult : new()
@@ -95,7 +95,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
         /// <param name="database">The <see cref="Database"/> that contains the stored procedure.</param>
         /// <param name="procedureName">The name of the stored procedure that will be executed.</param>
         /// <param name="resultSetMapper">The <see cref="IResultSetMapper&lt;TResult&gt;"/> that will be used to convert the returned set to an enumerable of clr type <typeparamref name="TResult"/>.</param>
-        /// <param name="parameterValues">Parameter values passsed to the stored procedure.</param>
+        /// <param name="parameterValues">Parameter values passed to the stored procedure.</param>
         /// <returns>An enumerable of <typeparamref name="TResult"/>.</returns>
         public static IEnumerable<TResult> ExecuteSprocAccessor<TResult>(this Database database, string procedureName, IResultSetMapper<TResult> resultSetMapper, params object[] parameterValues)
             where TResult : new()
@@ -111,7 +111,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
         /// <param name="procedureName">The name of the stored procedure that will be executed.</param>
         /// <param name="parameterMapper">The <see cref="IParameterMapper"/> that will be used to interpret the parameters passed to the Execute method.</param>
         /// <param name="resultSetMapper">The <see cref="IResultSetMapper&lt;TResult&gt;"/> that will be used to convert the returned set to an enumerable of clr type <typeparamref name="TResult"/>.</param>
-        /// <param name="parameterValues">Parameter values passsed to the stored procedure.</param>
+        /// <param name="parameterValues">Parameter values passed to the stored procedure.</param>
         /// <returns>An enumerable of <typeparamref name="TResult"/>.</returns>
         public static IEnumerable<TResult> ExecuteSprocAccessor<TResult>(this Database database, string procedureName, IParameterMapper parameterMapper, IResultSetMapper<TResult> resultSetMapper, params object[] parameterValues)
             where TResult : new()

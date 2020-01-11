@@ -38,7 +38,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
         /// </example>
         /// <returns>The default database</returns>
         /// <exception cref="System.Configuration.ConfigurationErrorsException">The configuration information cannot be read.</exception>
-        /// <exception cref="System.InvalidOperationException">The database factory has not been intialized or some configuration information is missing.</exception>
+        /// <exception cref="System.InvalidOperationException">The database factory has not been initialized or some configuration information is missing.</exception>
         public static Database CreateDatabase()
         {
             return GetCreateDefaultDatabase().Invoke();
@@ -55,7 +55,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
         /// <param name="name">The configuration key for database service</param>
         /// <returns>The database with the specified name</returns>
         /// <exception cref="System.Configuration.ConfigurationErrorsException">The configuration information cannot be read.</exception>
-        /// <exception cref="System.InvalidOperationException">The database factory has not been intialized or some configuration information is missing.</exception>
+        /// <exception cref="System.InvalidOperationException">The database factory has not been initialized or some configuration information is missing.</exception>
         public static Database CreateDatabase(string name)
         {
             return GetCreateDatabase().Invoke(name);

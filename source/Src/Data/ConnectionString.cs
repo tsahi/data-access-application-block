@@ -23,7 +23,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
 {
     /// <summary>
     /// ConnectionString class constructs a connection string by 
-    /// inserting a username and password into a template.
+    /// inserting a user name and password into a template.
     /// </summary>
     public class ConnectionString
     {
@@ -38,7 +38,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
         /// </summary>
         /// <param name="connectionString">The connection string.</param>
         /// <param name="userIdTokens">The user id tokens that can be parsed out of the connection string.</param>
-        /// <param name="passwordTokens">The password tokens that can be parsed out of the conection string.</param>
+        /// <param name="passwordTokens">The password tokens that can be parsed out of the connection string.</param>
         public ConnectionString(string connectionString, string userIdTokens, string passwordTokens)
         {
             if (string.IsNullOrEmpty(connectionString)) throw new ArgumentException(Resources.ExceptionNullOrEmptyString, "connectionString");
@@ -57,7 +57,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
         /// </summary>
         /// <value>The name of the user.</value>
         /// <devdoc>
-        /// Database username for the connection string.
+        /// Database user name for the connection string.
         /// </devdoc>
         public string UserName
         {
@@ -160,7 +160,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
         }
 
         /// <devdoc>
-        /// Gets the formatted connection string without the username and password.
+        /// Gets the formatted connection string without the user name and password.
         /// </devdoc>        
         public string ToStringNoCredentials()
         {
@@ -187,7 +187,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
             int previousPos = -1;
             string lowConnString = connectionString.ToLowerInvariant();
 
-            //initialze output parameter
+            //initialize output parameter
             tokenPos = -1;
             tokenMPos = -1;
             foreach (string token in tokens)

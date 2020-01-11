@@ -107,7 +107,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Tests
 
         /// <summary>
         /// Test to see if ToStringNoCredentials works properly for a connection string 
-        /// without a username and password
+        /// without a user name and password
         /// </summary>
         [TestMethod]
         public void RemovingCredentialsFromConnectionStringWithoutThemIsOk()

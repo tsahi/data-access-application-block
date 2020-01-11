@@ -27,7 +27,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Configuration
     /// </summary>
     /// <remarks>
     /// <para>
-    /// The Enterprise Library Data Access Application Block leverages the ADO.NET 2.0 provider factories. To determine what type of <see cref="Database"/> matches a given provider factory type, the optional 
+    /// The Enterprise Library Data Access Application Block leverages the ADO.NET 2.0 provider factories.
+    /// To determine what type of <see cref="Database"/> matches a given provider factory type, the optional 
     /// <see cref="DbProviderMapping"/> configuration objects can be defined in the block's configuration section.
     /// </para>
     /// <para>
@@ -122,7 +123,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Configuration
         }
 
         /// <summary/>
-        // TODO : make this a designtime converter. normal converter gets in the wat of system.configuration
+        // TODO : make this a design-time converter. normal converter gets in the wat of system.configuration
         //[TypeConverter("Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ComponentModel.Converters.SystemDataProviderConverter,  Microsoft.Practices.EnterpriseLibrary.Configuration.Design")]
         public override string Name
         {
