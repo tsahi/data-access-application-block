@@ -20,6 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		..\.gitattributes = ..\.gitattributes
 		..\.gitignore = ..\.gitignore
+		.runsettings = .runsettings
 		..\LICENSE.txt = ..\LICENSE.txt
 		..\Readme.md = ..\Readme.md
 	EndProjectSection
@@ -83,8 +84,8 @@ Global
 		{8258FB05-E92F-428E-AB48-86D7E3F5FE43} = {E3FD426C-F9D4-490A-A334-183DCE5D2C5C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45
 		SolutionGuid = {AC9482EE-438A-4706-B8CB-50B67CE7E3DF}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Data.vsmdi
