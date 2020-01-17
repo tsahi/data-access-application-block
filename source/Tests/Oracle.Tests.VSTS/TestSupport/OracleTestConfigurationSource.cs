@@ -22,9 +22,14 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Oracle.Tests.TestSupport
 {
     public static class OracleTestConfigurationSource
     {
-        public const string OracleConnectionString = "server=entlib;user id=testuser;password=testuser";
+        public static readonly string OracleConnectionString = "server=entlib;user id=testuser;password=testuser";
         public const string OracleConnectionStringName = "OracleTest";
         public const string OracleProviderName = "System.Data.OracleClient";
+
+        static OracleTestConfigurationSource()
+        {
+            OracleConnectionString = ConfigurationManager.ConnectionStrings[OracleConnectionStringName].ConnectionString;
+        }
 
         public static DictionaryConfigurationSource CreateConfigurationSource()
         {
