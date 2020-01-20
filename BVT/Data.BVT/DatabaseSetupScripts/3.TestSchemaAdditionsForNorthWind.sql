@@ -7,8 +7,8 @@ if exists (select * from sysobjects where id = object_id('dbo.GetTestData') and 
 
 if exists (select * from sysobjects where id = object_id('dbo.GetTest') and sysstat & 0xf = 4)
 	drop procedure "dbo"."GetTest"
-if exists (select * from sysobjects where id = object_id('dbo.Test') and sysstat & 0xf = 3)
-	drop table "dbo"."Test"
+if exists (select * from sysobjects where id = object_id('dbo.TestData') and sysstat & 0xf = 3)
+	drop table "dbo"."TestData"
 	
 if exists (select * from sysobjects where id = object_id('dbo.ErrorRaisingStoredProc') )
 	drop procedure "dbo"."ErrorRaisingStoredProc"
@@ -47,7 +47,7 @@ GO
 
 
 
-CREATE TABLE [dbo].[Test](
+CREATE TABLE [dbo].[TestData](
 	[TestID] [int] IDENTITY(1,1) NOT NULL,
 	[TestName] [nvarchar](40) NOT NULL,
 	[TestDescription] [nvarchar](40) NULL,
@@ -75,7 +75,7 @@ SELECT [TestID]
       ,[CreatedBy]
       ,[UpdatedBy]
       ,[TestCaseResult]
-  FROM [Northwind].[dbo].[Test] order by TestID
+  FROM [Northwind].[dbo].[TestData] order by TestID
   GO
   
 CREATE PROCEDURE [dbo].[GetTest] @TestID INT
@@ -89,20 +89,20 @@ SELECT [TestID]
       ,[CreatedBy]
       ,[UpdatedBy]
       ,[TestCaseResult]
-  FROM [Northwind].[dbo].[Test]
+  FROM [Northwind].[dbo].[TestData]
   WHERE TestID = @TestID
  GO
 
-INSERT INTO [Northwind].[dbo].[Test]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test1','Test1',1,GETDATE(),null,'v-ravarm',NULL,'Pass')
-INSERT INTO [Northwind].[dbo].[Test]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test2','Test2',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
-INSERT INTO [Northwind].[dbo].[Test]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test3','Test3',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
-INSERT INTO [Northwind].[dbo].[Test]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test4','Test4',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
-INSERT INTO [Northwind].[dbo].[Test]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test5','Test5',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
-INSERT INTO [Northwind].[dbo].[Test]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test6','Test6',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
-INSERT INTO [Northwind].[dbo].[Test]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test7','Test7',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
-INSERT INTO [Northwind].[dbo].[Test]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test8','Test8',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
-INSERT INTO [Northwind].[dbo].[Test]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test9','Test9',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
-INSERT INTO [Northwind].[dbo].[Test]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test10','Test10',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
+INSERT INTO [Northwind].[dbo].[TestData]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test1','Test1',1,GETDATE(),null,'v-ravarm',NULL,'Pass')
+INSERT INTO [Northwind].[dbo].[TestData]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test2','Test2',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
+INSERT INTO [Northwind].[dbo].[TestData]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test3','Test3',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
+INSERT INTO [Northwind].[dbo].[TestData]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test4','Test4',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
+INSERT INTO [Northwind].[dbo].[TestData]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test5','Test5',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
+INSERT INTO [Northwind].[dbo].[TestData]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test6','Test6',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
+INSERT INTO [Northwind].[dbo].[TestData]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test7','Test7',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
+INSERT INTO [Northwind].[dbo].[TestData]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test8','Test8',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
+INSERT INTO [Northwind].[dbo].[TestData]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test9','Test9',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
+INSERT INTO [Northwind].[dbo].[TestData]([TestName],[TestDescription],[BugsCreated],[CreatedDate],[UpdatedDate],[CreatedBy],[UpdatedBy],[TestCaseResult])VALUES('Test10','Test10',NULL,GETDATE(),null,'v-ravarm',NULL,'Pass')
 
 GO
 
