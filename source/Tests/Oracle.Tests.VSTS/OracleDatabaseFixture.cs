@@ -49,6 +49,9 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Oracle.Tests
             connection.Open();
             DbCommand cmd = oracleDatabase.GetSqlStringCommand("Select * from Region");
             cmd.CommandTimeout = 0;
+            cmd.Connection = connection;
+            using (cmd.ExecuteReader()) { };
+            connection.Close();
         }
 
         [TestMethod]
@@ -63,6 +66,9 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Oracle.Tests
             connection.Open();
             DbCommand cmd = oracleDatabase.GetSqlStringCommand("Select * from Region");
             cmd.CommandTimeout = 0;
+            cmd.Connection = connection;
+            using (cmd.ExecuteReader()) { };
+            connection.Close();
         }
 
         [TestMethod]

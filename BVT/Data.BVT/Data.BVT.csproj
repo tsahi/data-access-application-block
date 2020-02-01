@@ -232,12 +232,14 @@
   <ItemGroup>
     <None Include="Readme.md" />
     <Content Include="DatabaseSetupScripts\1.DataAccessQuickStarts.sql" />
+    <Content Include="DatabaseSetupScripts\OracleDBScripts\1.Table\Region.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\alldata.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\Country.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\Customers.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\Debits.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\Employees.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\Products.sql" />
+    <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\Region.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\truncate.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\3.SP\1.cursor.sql" />
     <None Include="DatabaseSetupScripts\OracleDBScripts\3.SP\sp_GUIDTEST.prc" />
