@@ -56,13 +56,14 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Oracle.Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void Bug869Test()
         {
             object[] paramarray = new object[2];
             paramarray[0] = "BLAUS";
             paramarray[1] = null;
 
-            using (IDataReader dataReader = db.ExecuteReader("GetCustomersTest", paramarray))
+            using (IDataReader dataReader = db.ExecuteReader("GetCustomersTest", paramarray)) //no such sproc
             {
                 while (dataReader.Read())
                 {
