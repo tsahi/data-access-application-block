@@ -1,4 +1,7 @@
-Insert Into Region Values (1,'Eastern');
-Insert Into Region Values (2,'Western');
-Insert Into Region Values (3,'Northern');
-Insert Into Region Values (4,'Southern');
+BEGIN
+INSERT INTO Region VALUES (1,'Eastern');
+INSERT INTO Region VALUES (2,'Western');
+INSERT INTO Region VALUES (3,'Northern');
+INSERT INTO Region VALUES (4,'Southern');
+COMMIT;
+END;
