@@ -210,6 +210,7 @@
     <None Include="DatabaseSetupScripts\OracleDBScripts\3.SP\ADDEMPLOYEEGETCOUNT.prc" />
     <None Include="DatabaseSetupScripts\OracleDBScripts\3.SP\ADDEMPLOYEES.prc" />
     <None Include="DatabaseSetupScripts\OracleDBScripts\3.SP\ADDSIMPLEDATATYPE.prc" />
+    <None Include="DatabaseSetupScripts\OracleDBScripts\3.SP\CustOrdersOrders.prc" />
     <None Include="DatabaseSetupScripts\OracleDBScripts\3.SP\DELETECOUNTRY.prc" />
     <None Include="DatabaseSetupScripts\OracleDBScripts\3.SP\DELETECOUNTRYLISTALL.prc" />
     <None Include="DatabaseSetupScripts\OracleDBScripts\3.SP\DELETEEMPLOYEES.prc" />
@@ -232,12 +233,14 @@
   <ItemGroup>
     <None Include="Readme.md" />
     <Content Include="DatabaseSetupScripts\1.DataAccessQuickStarts.sql" />
+    <Content Include="DatabaseSetupScripts\OracleDBScripts\1.Table\Orders.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\1.Table\Region.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\alldata.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\Country.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\Customers.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\Debits.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\Employees.sql" />
+    <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\Orders.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\Products.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\Region.sql" />
     <Content Include="DatabaseSetupScripts\OracleDBScripts\4.Data\truncate.sql" />
