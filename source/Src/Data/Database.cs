@@ -437,14 +437,21 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
                            DataSet dataSet,
                            string[] tableNames)
         {
-            if (tableNames == null) throw new ArgumentNullException("tableNames");
+            if (tableNames == null)
+            {
+                throw new ArgumentNullException(nameof(tableNames));
+            }
+
             if (tableNames.Length == 0)
             {
-                throw new ArgumentException(Resources.ExceptionTableNameArrayEmpty, "tableNames");
+                throw new ArgumentException(Resources.ExceptionTableNameArrayEmpty, nameof(tableNames));
             }
             for (int i = 0; i < tableNames.Length; i++)
             {
-                if (string.IsNullOrEmpty(tableNames[i])) throw new ArgumentException(Resources.ExceptionNullOrEmptyString, string.Concat("tableNames[", i, "]"));
+                if (string.IsNullOrEmpty(tableNames[i]))
+                {
+                    throw new ArgumentException(Resources.ExceptionNullOrEmptyString, $"{nameof(tableNames)}[{i}]");
+                }
             }
 
             using (DbDataAdapter adapter = GetDataAdapter(UpdateBehavior.Standard))
