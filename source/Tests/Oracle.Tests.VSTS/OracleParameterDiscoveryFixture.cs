@@ -79,14 +79,13 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Oracle.Tests
         }
 
         [TestMethod]
-        [Ignore]
         public void CanDiscoverFeaturesWhileInsideTransaction()
         {
             using (DbConnection connection = db.CreateConnection())
             {
                 connection.Open();
                 DbTransaction transaction = connection.BeginTransaction();
-                DbCommand storedProcedure = db.GetStoredProcCommand("CustOrdersOrders"); //there is no such sproc
+                DbCommand storedProcedure = db.GetStoredProcCommand("CustOrdersOrders");
                 storedProcedure.Connection = transaction.Connection;
                 storedProcedure.Transaction = transaction;
 
