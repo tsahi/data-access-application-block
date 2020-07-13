@@ -87,9 +87,6 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Oracle.Tests
         {
             Guid guid = new Guid(new byte[16]);
             string name = "ENTLIB";
-            object outputGuidValue = null;
-            object outputStringValue = null;
-
             DbCommand dbCommand = db.GetStoredProcCommand("SetAndGetGuid");
             db.AddOutParameter(dbCommand, "outputGuid", DbType.Guid, 0);
             db.AddInParameter(dbCommand, "inputGuid", DbType.Guid);
@@ -99,9 +96,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Oracle.Tests
             db.SetParameterValue(dbCommand, "inputString", name);
 
             db.ExecuteNonQuery(dbCommand);
-            outputGuidValue = db.GetParameterValue(dbCommand, "outputGuid");
-            outputStringValue = db.GetParameterValue(dbCommand, "outputString");
-
+            object outputGuidValue = db.GetParameterValue(dbCommand, "outputGuid");
+            object outputStringValue = db.GetParameterValue(dbCommand, "outputString");
             Assert.IsNotNull(outputGuidValue);
             Assert.IsFalse(outputGuidValue == DBNull.Value);
             Assert.AreSame(typeof(Guid), outputGuidValue.GetType());
