@@ -113,16 +113,14 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Oracle.Tests
         }
 
         [TestMethod]
-        public void CaGetValueForDiscoveredGuidParameters()
+        public void CanGetValueForDiscoveredGuidParameters()
         {
             Guid guid = new Guid(new byte[16]);
             string name = "ENTLIB";
-            object inputGuidValue = null;
 
             DbCommand dbCommand = db.GetStoredProcCommand("SetAndGetGuid", null, guid, null, name);
 
-            inputGuidValue = db.GetParameterValue(dbCommand, "inputGuid");
-
+            object inputGuidValue = db.GetParameterValue(dbCommand, "inputGuid");
             Assert.IsNotNull(inputGuidValue);
             Assert.IsFalse(inputGuidValue == DBNull.Value);
             Assert.AreSame(typeof(Guid), inputGuidValue.GetType());
