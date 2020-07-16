@@ -15,9 +15,8 @@ limitations under the License.
 */
 
 using System;
-using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
-using System.Text;
 using Microsoft.Practices.EnterpriseLibrary.Common.TestSupport.ContextBase;
 using Microsoft.Practices.EnterpriseLibrary.Data.Oracle.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -33,13 +32,14 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Oracle.Tests
         protected override void Arrange()
         {
             EnvironmentHelper.AssertOracleClientIsInstalled();
-            database = new OracleDatabase("server=entlib;user id=testuser;password=testuser");
+            String connectionString = ConfigurationManager.ConnectionStrings["OracleTest"].ConnectionString;
+            database = new OracleDatabase(connectionString);
         }
 
         [TestMethod]
         public void ThenCanExecuteParameterizedSproc()
         {
-            var accessor = database.CreateSprocAccessor<Customer>("GetCustomersTest");
+            var accessor = database.CreateSprocAccessor<Customer>("GetCustomerById");
             var result = accessor.Execute("BLAUS", null).ToArray();
 
             Assert.IsNotNull(result);
