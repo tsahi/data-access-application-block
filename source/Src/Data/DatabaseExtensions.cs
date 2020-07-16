@@ -132,7 +132,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data
         {
             IRowMapper<TResult> defaultRowMapper = MapBuilder<TResult>.BuildAllProperties();
 
-            return CreateSprocAccessor(database, procedureName, defaultRowMapper);
+            return database.CreateSprocAccessor(procedureName, defaultRowMapper);
         }
 
         /// <summary>
