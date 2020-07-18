@@ -65,6 +65,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.BVT.Accessor
             var person = result.First();
 
             Assert.AreEqual(1, person.ID);
+            Assert.AreEqual("Nicolas", person.Name);
         }
     }
 }
