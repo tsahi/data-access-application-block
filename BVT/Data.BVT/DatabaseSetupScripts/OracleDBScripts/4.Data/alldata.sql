@@ -610,6 +610,8 @@ COMMIT;
 END;
 
 BEGIN
+ALTER SESSION SET NLS_DATE_FORMAT='MM/DD/YYYY';
+
 INSERT INTO Orders
 (OrderID,CustomerID,EmployeeID,OrderDate,RequiredDate,
 	ShippedDate,ShipVia,Freight,ShipName,ShipAddress,

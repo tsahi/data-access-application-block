@@ -1,4 +1,6 @@
 BEGIN
+ALTER SESSION SET NLS_DATE_FORMAT='MM/DD/YYYY';
+
 INSERT INTO Orders
 (OrderID,CustomerID,EmployeeID,OrderDate,RequiredDate,
 	ShippedDate,ShipVia,Freight,ShipName,ShipAddress,
@@ -5811,3 +5813,4 @@ VALUES (11077,N'RATTC',1,'5/6/1998','6/3/1998',NULL,2,8.53,
 	N'NM',N'87110',N'USA');
 COMMIT;
 END;
+/

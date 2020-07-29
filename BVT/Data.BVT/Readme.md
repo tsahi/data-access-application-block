@@ -21,12 +21,12 @@ C. The Oracle connection string is configured as follows:
    User Id: SYSTEM<br/>
    Password: oracle
 
-   These values will need to be modified if the Oracle installation differs. Run this command on your Oracle database instance:
+   These values will need to be modified if the Oracle installation differs. Run this command on your Oracle XE database instance:
 
     `ALTER USER SYSTEM IDENTIFIED BY oracle;`
 
 
-D. Install Oracle and then run the SQL scripts located in DatabaseSetupScripts\OracleDBScripts, using the credentials above:
+D. Install Oracle XE and then run the SQL scripts located in DatabaseSetupScripts\OracleDBScripts, using the credentials above:
     1. 1.Table\alldb.sql
     2. 2.Packages\ENTLIBTEST.pks
     3. 2.Packages\ENTLIBTEST.pkb
@@ -34,6 +34,13 @@ D. Install Oracle and then run the SQL scripts located in DatabaseSetupScripts\O
        All other 18 scripts located in 3.SP directory
     5. 4.Data\alldata.sql
 
+**Tip:** To run these scripts in SQL*Plus utility provided with Oracle XE, use this syntax in the SQL*Plus console:
+`@"path\to\1.Table\alldb.sql"`
+
+**Note:** Orders table contains dates in MM/DD/YYYY format. If your system date format is different, you should
+run this command in order to change the date format for the session:
+
+`ALTER SESSION SET NLS_DATE_FORMAT='MM/DD/YYYY';`
 
 Microsoft patterns & practices<br/>
 http://microsoft.com/practices
