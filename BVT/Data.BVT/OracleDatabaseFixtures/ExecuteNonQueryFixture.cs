@@ -133,10 +133,10 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.BVT.OracleDatabaseFixtures
             Database db = DatabaseFactory.CreateDatabase("OracleTest");
             DbCommand dbCommand = db.GetStoredProcCommand("GetProductName");
             db.AddInParameter(dbCommand, "vProductId", DbType.Int32, 1);
-            db.AddOutParameter(dbCommand, "vResult", DbType.String, 50);
+            db.AddOutParameter(dbCommand, "vResult", DbType.StringFixedLength, 50);
             db.ExecuteNonQuery(dbCommand);
             string productName = (string)db.ExecuteScalar(CommandType.Text, "select ProductName from Products where ProductId=1");
-            Assert.AreEqual(productName, Convert.ToString(db.GetParameterValue(dbCommand, "vResult")));
+            Assert.AreEqual(productName, Convert.ToString(db.GetParameterValue(dbCommand, "vResult")).Trim());
         }
 
         [TestMethod]
