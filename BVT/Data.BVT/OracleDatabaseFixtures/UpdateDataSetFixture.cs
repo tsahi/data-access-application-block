@@ -17,6 +17,7 @@ limitations under the License.
 using System;
 using System.Data;
 using System.Data.Common;
+using System.Diagnostics;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Data.BVT;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -374,14 +375,16 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.BVT.OracleDatabaseFixtures
                     db.UpdateDataSet(ds, "Country", dbAddCountry, dbUpdateCountry, dbDeleteCountry, transaction);
                     transaction.Commit();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     transaction.Rollback();
+                    Trace.TraceError("Transaction rolled back: " + ex.Message);
                 }
             }
 
             using (DataSet dsResult = db.ExecuteDataSet(CommandType.Text, "select * from Country where CountryCode in ('RUS')"))
             {
+                Assert.IsTrue(dsResult.Tables[0].Rows.Count > 0, "No rows returned from Country table");
                 DataRow result = dsResult.Tables[0].Rows[0];
                 Assert.IsNotNull(result);
                 Assert.AreEqual("RUSSIA", Convert.ToString(result["CountryName"]));
