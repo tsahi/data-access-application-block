@@ -68,9 +68,9 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.BVT.OracleDatabaseFixtures
             Database db = DatabaseFactory.CreateDatabase("OracleTest");
             DbCommand dbCommand = db.GetStoredProcCommand("GetProductName");
             db.AddInParameter(dbCommand, "vProductId", DbType.Int32, 1);
-            db.AddOutParameter(dbCommand, "vResult", DbType.String, 100);
+            db.AddOutParameter(dbCommand, "vResult", DbType.StringFixedLength, 100);
             db.ExecuteScalar(dbCommand);
-            Assert.AreEqual("Product1", db.GetParameterValue(dbCommand, "vResult"));
+            Assert.AreEqual("Product1", db.GetParameterValue(dbCommand, "vResult").ToString().Trim());
         }
 
         [TestMethod]
@@ -163,10 +163,10 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.BVT.OracleDatabaseFixtures
                     db.ExecuteScalar(transaction, "DeleteCountry", new object[] { "SA" });
                     transaction.Commit();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     transaction.Rollback();
-                    Assert.Fail("Transaction Rolled back");
+                    Assert.Fail("Transaction Rolled back: " + ex.Message);
                 }
                 finally
                 {
