@@ -90,7 +90,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Oracle.Tests
             DbCommand dbCommand = db.GetStoredProcCommand("SetAndGetGuid");
             db.AddOutParameter(dbCommand, "outputGuid", DbType.Guid, 0);
             db.AddInParameter(dbCommand, "inputGuid", DbType.Guid);
-            db.AddOutParameter(dbCommand, "outputString", DbType.String, 20);
+            db.AddOutParameter(dbCommand, "outputString", DbType.StringFixedLength, 20);
             db.AddInParameter(dbCommand, "inputString", DbType.String);
             db.SetParameterValue(dbCommand, "inputGuid", guid);
             db.SetParameterValue(dbCommand, "inputString", name);
@@ -105,7 +105,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Oracle.Tests
             Assert.IsNotNull(outputStringValue);
             Assert.IsFalse(outputStringValue == DBNull.Value);
             Assert.AreSame(typeof(String), outputStringValue.GetType());
-            Assert.AreEqual(name, outputStringValue);
+            Assert.AreEqual(name, outputStringValue.ToString().Trim());
         }
 
         [TestMethod]
