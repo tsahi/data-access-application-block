@@ -34,8 +34,10 @@ D. Install Oracle XE and then run the SQL scripts located in DatabaseSetupScript
       All other 18 scripts located in 3.SP directory
    5. 4.Data\alldata.sql
 
-**Tip:** To run these scripts in SQL*Plus utility provided with Oracle XE, use this syntax in the SQL*Plus console:
-`@"path\to\1.Table\alldb.sql"`
+**Tip:** It's best to run the scripts in [Oracle Developer Tools for Visual Studio](https://www.oracle.com/database/technologies/net-downloads.html)
+or [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html), because some of them contain
+multibyte character strings. SQL*Plus, the terminal utility that comes with Oracle, doesn't handle multibyte
+characters correctly and will corrupt the data.
 
 **Note:** Orders table contains dates in MM/DD/YYYY format. If your system date format is different, you should
 run this command in order to change the date format for the session:
